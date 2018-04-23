@@ -6,7 +6,7 @@
 <style type="text/css">
 html,
 body {
-  background: black !important;
+
 }
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
@@ -34,37 +34,18 @@ const testViewConfig = {
   exportViewUrl: 'http://higlass.io/api/v1/viewconfs/',
   views: [
     {
-      initialXDomain: [-114.34492062432261, -103.1400637535123],
-      initialYDomain: [-46.99008821605368, -39.07861292139287],
+      initialXDomain: [0, 100000],
       tracks: {
-        center: [
-          {
-            type: 'combined',
-            contents: [
+          top: [
               {
-                type: 'osm-tiles',
-              },
-              {
-                server: 'http://localhost:8001/api/v1',
-                tilesetUid: 'ski-resorts',
-                type: 'geo-json',
+                server: 'http://localhost:8000/api/v1',
+                tilesetUid: 'cH6kPpP0SbW04acSN_9Rew',
+                type: 'time-interval-track',
+                  height: 100,
                 options: {
-                  labelColor: 'red',
-                  labelPosition: 'hidden',
-                  trackBorderWidth: 0,
-                  trackBorderColor: 'red',
-                  rectangleDomainFillColor: 'red',
-                  rectangleDomainFillOpacity: 0.25,
-                  rectangleDomainStrokeColor: 'red',
-                  rectangleDomainOpacity: 1,
-                  rectanlgeMinSize: 3,
-                  minSquareSize: 4,
-                  polygonMinBoundingSize: 5,
-                  name: 'Ski Areas',
+
                 },
-              },
-            ],
-          },
+             }
         ],
       },
       layout: {
@@ -84,7 +65,7 @@ const testViewConfig = {
 window.hglib.createHgComponent(
   document.getElementById('demo'),
   testViewConfig,
-  { bounded: true, isDarkTheme: true },
+  { bounded: true, },
 );
 </script>
 </html>

@@ -1,9 +1,9 @@
 import register from 'higlass-register';
 
-import GeoJsonTrack from './GeoJsonTrack';
+import TimeIntervalTrack from './TimeIntervalTrack';
 
 register({
-  name: 'GeoJsonTrack',
-  track: GeoJsonTrack,
-  config: GeoJsonTrack.config,
+  name: 'TimeIntervalTrack',
+  track: TimeIntervalTrack,
+  config: TimeIntervalTrack.config,
 });

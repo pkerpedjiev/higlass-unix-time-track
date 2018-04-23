@@ -3,3 +3,6 @@ dist
 *.zip
 *.log
 *.DS_cache
+*.un~
+*.swp
+*.swo
