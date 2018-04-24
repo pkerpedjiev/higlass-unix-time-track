@@ -76,7 +76,11 @@ const TimeIntervalTrack = (HGC, ...args) => {
         [this._xScale.domain()[0] * scale, this._xScale.domain()[1] * scale],
       );
 
-      return newScale.ticks(tickCount);
+      console.log('tilesetInfo:', this.tilesetInfo);
+
+      return newScale.ticks(tickCount).filter(
+        t => t / scale >= this.tilesetInfo.start_value && t / scale <= this.tilesetInfo.end_value,
+      );
     }
 
     draw() {
@@ -88,8 +92,12 @@ const TimeIntervalTrack = (HGC, ...args) => {
 
 
       const tickHeight = 10;
-      const tickStartY = (this.dimensions[1] / 2) - (tickHeight / 2);
+      const textHeight = 10;
+      const betweenTickAndText = 5;
+
+      const tickStartY = (this.dimensions[1] - tickHeight - textHeight - betweenTickAndText) / 2;
       const tickEndY = tickStartY + tickHeight;
+
       const ticks = this.calculateAxisTickValues();
 
       graphics.clear();
@@ -104,7 +112,7 @@ const TimeIntervalTrack = (HGC, ...args) => {
         graphics.lineTo(xPos, this.position[1] + tickEndY); 
 
         this.axisTexts[i].x = xPos;
-        this.axisTexts[i].y = this.position[1] + tickEndY + 5;
+        this.axisTexts[i].y = this.position[1] + tickEndY + betweenTickAndText;
       });
     }
 
