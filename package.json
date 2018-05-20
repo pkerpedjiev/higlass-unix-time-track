@@ -1,6 +1,6 @@
 {
   "name": "higlass-time-interval-track",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A HiGlass track showing time intervals.",
   "keywords": [
     "HiGlass",
