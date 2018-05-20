@@ -23,6 +23,8 @@
     "no-console": 0,
     "no-trailing-spaces": 0,
     "no-underscore-dangle": 0,
+    "prefer-template": 0,
+    "no-nested-ternary": 0,
     "function-paren-newline": ["error", "consistent"]
   }
 }

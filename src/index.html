@@ -9,7 +9,7 @@ body {
 
 }
 </style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="hglib.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.2/react.min.js"></script>
@@ -27,40 +27,72 @@ body {
 </body>
 <script src="hglib.js"></script>
 <script>
-const testViewConfig = {
-  editable: true,
-  zoomFixed: false,
-  trackSourceServers: ['http://higlass.io/api/v1'],
-  exportViewUrl: 'http://higlass.io/api/v1/viewconfs/',
-  views: [
-    {
-      initialXDomain: [0, 100000],
-      tracks: {
-          top: [
-              {
-                server: 'http://localhost:8000/api/v1',
-                tilesetUid: 'cH6kPpP0SbW04acSN_9Rew',
-                type: 'time-interval-track',
-                  height: 100,
-                options: {
-
-                },
-             }
-        ],
-      },
-      layout: {
-        w: 12,
-        h: 12,
-        x: 0,
-        y: 0,
-        moved: false,
-        static: false,
-      },
-    },
+const testViewConfig = 
+{
+  "editable": true,
+  "zoomFixed": false,
+  "trackSourceServers": [
+    "http://localhost:8000/api/v1"
   ],
-  zoomLocks: { locksByViewUid: {}, locksDict: {} },
-  locationLocks: { locksByViewUid: {}, locksDict: {} },
-};
+  "exportViewUrl": "http://higlass.io/api/v1/viewconfs/",
+  "views": [
+    {
+      "initialXDomain": [
+        584.3580555423636,
+        55474.64562614506
+      ],
+      "tracks": {
+        "top": [
+          {
+            "name": "sample_htime.json",
+            "created": "2018-05-20T20:11:56.364578Z",
+            "server": "http://localhost:8000/api/v1",
+            "tilesetUid": "N5Oc40r-RKOzdo05RNZ_-Q",
+            "uid": "DOkLGvEZR_mWFhaYNMRX2Q",
+            "type": "time-interval-track",
+            "options": {
+              "name": "sample_htime.json"
+            },
+            "width": 20,
+            "position": "top"
+          }
+        ],
+        "center": [],
+        "left": [],
+        "right": [],
+        "bottom": [],
+        "whole": [],
+        "gallery": []
+      },
+      "layout": {
+        "w": 12,
+        "h": 12,
+        "x": 0,
+        "y": 0,
+        "i": "P3Ho7j8HQjWlBi8JjLIo2w",
+        "moved": false,
+        "static": false
+      },
+      "uid": "P3Ho7j8HQjWlBi8JjLIo2w",
+      "initialYDomain": [
+        -12769.465713866583,
+        53069.87525589198
+      ]
+    }
+  ],
+  "zoomLocks": {
+    "locksByViewUid": {},
+    "locksDict": {}
+  },
+  "locationLocks": {
+    "locksByViewUid": {},
+    "locksDict": {}
+  },
+  "valueScaleLocks": {
+    "locksByViewUid": {},
+    "locksDict": {}
+  }
+}
 
 window.hglib.createHgComponent(
   document.getElementById('demo'),

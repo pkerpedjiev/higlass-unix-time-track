@@ -1,13 +1,13 @@
-# GeoJSON Track for HiGlass
+# Time Interval Track for HiGlass
 
-> Display your favorite GeoJSON annotation right in HiGlass.
+> Display time intervals in the format HH:MM:ss in HiGlass.
 
 [![HiGlass](https://img.shields.io/badge/higlass-👍-red.svg?colorB=0f5d92)](http://higlass.io)
-[![Build Status](https://img.shields.io/travis/flekschas/higlass-geojson/master.svg?colorB=0f5d92)](https://travis-ci.org/flekschas/higlass-geojson)
+[![Build Status](https://img.shields.io/travis/pkerpedjiev/higlass-time-interval-track/master.svg?colorB=0f5d92)](https://travis-ci.org/pkerpedjiev/higlass-time-interval-track)
 
 ![HiGlass showing ski areas with Mapbox](/teaser.jpg?raw=true "Ski areas around Park City shown with Mapbox")
 
-**Note**: This is the source code for the GeoJSON track only! You might want to check out the following repositories as well:
+**Note**: This is the source code for the time interval track only! You might want to check out the following repositories as well:
 
 - HiGlass viewer: https://github.com/hms-dbmi/higlass
 - HiGlass server: https://github.com/hms-dbmi/higlass-server
@@ -16,7 +16,7 @@
 ## Installation
 
 ```
-npm install higlass-geojson
+npm install higlass-time-interval-track
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ npm install higlass-geojson
 1. Make sure you load this track prior to `hglib.js`. For example:
 
 ```
-<script src="higlass-geojson.js"></script>
+<script src="higlass-time-interval-track.js"></script>
 <script src="hglib.js"></script>
 <script>
   ...
@@ -38,22 +38,11 @@ npm install higlass-geojson
   ...
   {
     server: 'http://localhost:8001/api/v1',
-    tilesetUid: 'my-outrageously-fancy-geojson-db',
-    uid: 'my-outrageously-fancy-geojson-db',
-    type: 'geo-json',
+    tilesetUid: 'time-interval.json',
+    uid: 'blah',
+    type: 'time-interval-track',
     options: {
-      labelColor: 'red',
-      labelPosition: 'hidden',
-      trackBorderWidth: 0,
-      trackBorderColor: 'red',
-      rectangleDomainFillColor: 'red',
-      rectangleDomainFillOpacity: 0.25,
-      rectangleDomainStrokeColor: 'red',
-      rectangleDomainOpacity: 1,
-      rectanlgeMinSize: 3,
-      minSquareSize: 4,
-      polygonMinBoundingSize: 5,
-      name: 'My Outrageously Fancy GeoJSON Stuff - Truly Awesome',
+
     },
   },
   ...
@@ -67,7 +56,7 @@ Take a look at [`src/index.html`](src/index.html) for an example.
 ### Installation
 
 ```bash
-$ git clone https://github.com/flekschas/higlass-geojson && higlass-geojson
+$ git clone https://github.com/pkerpedjiev/higlass-time-interval-track
 $ npm install
 ```
 

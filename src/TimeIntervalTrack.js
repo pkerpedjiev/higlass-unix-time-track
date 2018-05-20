@@ -1,5 +1,16 @@
 import { format } from 'd3-format';
 
+function formatTime(seconds) {
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = seconds % 60;
+  return [
+    h,
+    m > 9 ? m : (h ? '0' + m : m || '0'),
+    s > 9 ? s : '0' + s,
+  ].filter(a => a).join(':');
+}
+
 const TimeIntervalTrack = (HGC, ...args) => {
   if (!new.target) {
     throw new Error(
@@ -24,7 +35,7 @@ const TimeIntervalTrack = (HGC, ...args) => {
 
       this.axisTexts = [];
       this.axisTextFontFamily = 'Arial';
-      this.axisTextFontSize = 10;
+      this.axisTextFontSize = 14;
       this.tickFormat = format('.2');
     }
 
@@ -53,7 +64,7 @@ const TimeIntervalTrack = (HGC, ...args) => {
         }
 
 
-        this.axisTexts[i].text = this.tickFormat(tick);
+        this.axisTexts[i].text = formatTime(tick);
         this.axisTexts[i].anchor.y = 0.5;
         this.axisTexts[i].anchor.x = 0.5;
         i++;
@@ -76,12 +87,11 @@ const TimeIntervalTrack = (HGC, ...args) => {
         [this._xScale.domain()[0] * scale, this._xScale.domain()[1] * scale],
       );
 
-      console.log('tilesetInfo:', this.tilesetInfo);
-
       return newScale.ticks(tickCount).filter(
         t => t / scale >= this.tilesetInfo.start_value && t / scale <= this.tilesetInfo.end_value,
       );
     }
+
 
     draw() {
       const graphics = this.pMain;

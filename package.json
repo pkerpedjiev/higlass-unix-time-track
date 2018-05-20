@@ -1,27 +1,25 @@
 {
-  "name": "higlass-geojson",
+  "name": "higlass-time-interval-track",
   "version": "0.1.2",
-  "description": "GeoJSON Track for HiGlass",
+  "description": "A HiGlass track showing time intervals.",
   "keywords": [
     "HiGlass",
-    "Track",
-    "GeoJSON",
-    "Geographic Maps"
+    "Track"
   ],
-  "author": "Fritz Lekschas",
+  "author": "Peter Kerpedjiev",
   "license": "MIT",
   "contributors": [
     {
-      "name": "Fritz Lekschas",
-      "url": "http://github.com/flekschas"
+      "name": "Peter Kerpedjiev",
+      "url": "http://github.com/pkerpedjiev"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/flekschas/higlass-geojson.git"
+    "url": "git://github.com/pkerpedjiev/higlass-time-interval-track.git"
   },
   "main": "src/index.js",
-  "unpkg": "dist/higlass-geojson.min.js",
+  "unpkg": "dist/higlass-time-interval-track.min.js",
   "files": [
     "dist"
   ],
@@ -61,7 +59,6 @@
   },
   "dependencies": {
     "d3-format": "^1.2.2",
-    "d3-geo": "^1.10.0",
     "higlass-register": "^0.1.0"
   }
 }
