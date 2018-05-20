@@ -5,7 +5,7 @@
 [![HiGlass](https://img.shields.io/badge/higlass-👍-red.svg?colorB=0f5d92)](http://higlass.io)
 [![Build Status](https://img.shields.io/travis/pkerpedjiev/higlass-time-interval-track/master.svg?colorB=0f5d92)](https://travis-ci.org/pkerpedjiev/higlass-time-interval-track)
 
-![HiGlass showing ski areas with Mapbox](/teaser.jpg?raw=true "Ski areas around Park City shown with Mapbox")
+![HiGlass showing times](/screenshot.png?raw=true "Times since the beginning of an event visible as an axis")
 
 **Note**: This is the source code for the time interval track only! You might want to check out the following repositories as well:
 
