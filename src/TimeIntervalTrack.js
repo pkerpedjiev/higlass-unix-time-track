@@ -88,7 +88,7 @@ const TimeIntervalTrack = (HGC, ...args) => {
       );
 
       return newScale.ticks(tickCount).filter(
-        t => t / scale >= this.tilesetInfo.start_value && t / scale <= this.tilesetInfo.end_value,
+        t => t >= this.tilesetInfo.start_value && t <= this.tilesetInfo.end_value,
       );
     }
 
@@ -99,7 +99,6 @@ const TimeIntervalTrack = (HGC, ...args) => {
       if (!this.tilesetInfo) return;
 
       const scale = +this.tilesetInfo.end_value / +this.tilesetInfo.max_width;
-
 
       const tickHeight = 10;
       const textHeight = 10;
