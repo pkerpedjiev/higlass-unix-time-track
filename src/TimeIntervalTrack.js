@@ -1,13 +1,25 @@
 import { format } from 'd3-format';
 
-function formatTime(seconds) {
+function formatTime(seconds, tickDiff) {
+  // tickDiff specifies the number of significant digits for values between ticks
   const h = Math.floor(seconds / 3600);
   const m = Math.floor((seconds % 3600) / 60);
   const s = seconds % 60;
+  let ss = s;
+
+  if (tickDiff && tickDiff < 0) {
+    const f = format('.' + (-tickDiff) + 'f');
+    ss = f(s);
+  }
+
+  if (s <= 9) {
+    ss = '0' + ss;
+  }
+
   return [
     h,
     m > 9 ? m : (h ? '0' + m : m || '0'),
-    s > 9 ? s : '0' + s,
+    ss,
   ].filter(a => a).join(':');
 }
 
@@ -45,6 +57,12 @@ const TimeIntervalTrack = (HGC, ...args) => {
 
       // const color = getDarkTheme() ? '#cccccc' : 'black';
       const color = 'black';
+      let tickDiff = null;
+
+      if (this.tickValues.length >= 2) {
+        tickDiff = this.tickValues[1] - this.tickValues[0];
+        tickDiff = Math.floor(Math.log(tickDiff) / Math.log(10));
+      }
 
       while (i < this.tickValues.length) {
         const tick = this.tickValues[i];
@@ -64,7 +82,7 @@ const TimeIntervalTrack = (HGC, ...args) => {
         }
 
 
-        this.axisTexts[i].text = formatTime(tick);
+        this.axisTexts[i].text = formatTime(tick, tickDiff);
         this.axisTexts[i].anchor.y = 0.5;
         this.axisTexts[i].anchor.x = 0.5;
         i++;
