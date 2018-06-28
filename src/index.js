@@ -1,9 +1,11 @@
 import register from 'higlass-register';
 
-import TimeIntervalTrack from './TimeIntervalTrack';
+import UnixTimeTrack from './UnixTimeTrack';
+
+console.log('registering:');
 
 register({
-  name: 'TimeIntervalTrack',
-  track: TimeIntervalTrack,
-  config: TimeIntervalTrack.config,
+  name: 'UnixTimeTrack',
+  track: UnixTimeTrack,
+  config: UnixTimeTrack.config,
 });
